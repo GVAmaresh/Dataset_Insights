@@ -2,7 +2,7 @@ import streamlit as st
 from pandasai import SmartDataframe
 from pandasai.llm.google_gemini import GoogleGemini
 
-llm = GoogleGemini(api_key='AIzaSyDvVLs3rkuynWcImZdstH6I-ecsqzEyHjs')
+llm = GoogleGemini(api_key='AIzaSyA9dAYUonF8mY1qve2omBtckh9mJegaMso')
 
 def chat_page():
     if st.session_state.df is None:
