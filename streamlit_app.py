@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 import streamlit as st
 from pandasai import SmartDataframe
@@ -9,8 +10,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 import seaborn as sns
+from pandasai import Agent
+
 
 llm = GoogleGemini(api_key='AIzaSyA9dAYUonF8mY1qve2omBtckh9mJegaMso')
+os.environ["PANDASAI_API_KEY"] = "$2a$10$/LzDcQcjhdGX1srHprphU.ua8Q071KVmFYJjPJxH0flOG2ETr03sm"
 
 st.set_page_config(page_title="Data Explorer", page_icon="📊", layout="wide")
 
@@ -194,6 +198,7 @@ if st.session_state.page == 'chat':
         "Filter rows where column Z is greater than A.",
         "What insights can you provide about this dataset?",
     ]
+    agent = Agent(df)
 
     with st.form("chat_form"):
         chat_prompt = st.text_area(
@@ -219,6 +224,7 @@ if st.session_state.page == 'chat':
             else:
                 try:
                     response = updated_df.chat(chat_prompt)
+                    response2 = agent.chat(chat_prompt)
 
                     st.markdown("### Response:")
                     if "exports" in response:
@@ -234,8 +240,10 @@ if st.session_state.page == 'chat':
                         st.text_area("Response:", value=response, height=200, key="response")
                     else:
                         st.warning("Unexpected response format. Please refine your query!")
+                    st.text_area("Second Response: ", value=response2, height=200, key="response2")
                 except Exception as e:
                     st.error(f"An error occurred while processing your prompt: {e}")
+                    st.text_area("Second Response: ", value=response2, height=200, key="response2")
 
     if st.button("Back to Data Exploration"):
         go_to_data_exploration()
