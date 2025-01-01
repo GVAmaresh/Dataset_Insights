@@ -240,7 +240,16 @@ if st.session_state.page == 'chat':
                         st.text_area("Response:", value=response, height=200, key="response")
                     else:
                         st.warning("Unexpected response format. Please refine your query!")
-                    st.text_area("Second Response: ", value=response2, height=200, key="response2")
+                    if "exports" in response2:
+                        img = Image.open(response2)
+
+                        fig, ax = plt.subplots()
+                        ax.imshow(img)
+                        ax.axis('off')
+
+                        st.pyplot(fig)
+                    else:
+                        st.text_area("Second Response: ", value=response2, height=200, key="response2")
                 except Exception as e:
                     st.error(f"An error occurred while processing your prompt: {e}")
                     st.text_area("Second Response: ", value=response2, height=200, key="response2")
