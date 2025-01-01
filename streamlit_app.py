@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import seaborn as sns
 
-llm = GoogleGemini(api_key='AIzaSyDvVLs3rkuynWcImZdstH6I-ecsqzEyHjs')
+llm = GoogleGemini(api_key='AIzaSyA9dAYUonF8mY1qve2omBtckh9mJegaMso')
 
 st.set_page_config(page_title="Data Explorer", page_icon="📊", layout="wide")
 
