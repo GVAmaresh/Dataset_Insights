@@ -11,6 +11,11 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import seaborn as sns
 from pandasai import Agent
+from pandasai.helpers.cache import Cache
+
+import os
+os.environ["MPLCONFIGDIR"] = "/app/matplotlib"
+import matplotlib
 
 
 llm = GoogleGemini(api_key='AIzaSyA9dAYUonF8mY1qve2omBtckh9mJegaMso')
@@ -103,8 +108,6 @@ elif st.session_state.page == 'data_exploration':
 
     uploaded_file = st.sidebar.file_uploader("📁 Upload your dataset (CSV format)", type="csv")
 
-
-
     if uploaded_file:
         try:
             st.session_state.df = pd.read_csv(uploaded_file)  
@@ -190,7 +193,10 @@ if st.session_state.page == 'chat':
         st.stop()
 
     df = st.session_state.df
+    # custom_cache = Cache(filepath="/app/cache/cache_db_0.11.db")
+
     updated_df = SmartDataframe(df, config={"llm": llm})
+
 
     suggested_prompts = [
         "What is the average value of column X?",
@@ -239,7 +245,7 @@ if st.session_state.page == 'chat':
                     elif isinstance(response, str):
                         st.text_area("Response:", value=response, height=200, key="response")
                     else:
-                        st.warning("Unexpected response format. Please refine your query!")
+                        st.warning("Unexpected response format. Please refine your query!")  
                     if "exports" in response2:
                         img = Image.open(response2)
 

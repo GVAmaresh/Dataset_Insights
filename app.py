@@ -1,4 +1,5 @@
 import streamlit as st
+from file_handler.file_handler import data_exploration
 
 def home_page():
     st.title("Welcome to the Data Explorer! 📊")
@@ -16,3 +17,4 @@ def home_page():
 def data_exploration_page():
     st.sidebar.title("Navigation")
     st.sidebar.subheader("Upload & Explore")
+    data_exploration()
