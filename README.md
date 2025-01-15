@@ -1,7 +1,7 @@
 
 # Data Insights
 
-Data Insight is an intelligent tool designed to analyze CSV files and provide comprehensive insights through a chatbot interface. This project integrates Gemini and Pandas AI for interactive and intuitive data exploration. Key features include:
+Data Insights is an intelligent tool designed to analyze CSV files and provide comprehensive insights through a chatbot interface. This project integrates Gemini and Pandas AI for interactive and intuitive data exploration. Key features include:
 
 * Automated Summary: Quickly generate a descriptive summary of your dataset.
 * Graphical Visualizations: Create custom graphs to represent data visually.
@@ -11,21 +11,12 @@ This project enables users to understand and manipulate datasets effortlessly, m
 
 **TechStack** [![My Skills](https://skillicons.dev/icons?i=docker,py,vscode,windows)](https://skillicons.dev)
 
-## Project Structure
-The project is divided into the following components:
-
-1. Frontend: Built using Streamlit for an intuitive user interface.
-2. Backend: Developed in Python for data processing and chatbot interactions.
-3. Data Operations: Powered by Pandas AI and Gemini for intelligent analysis.
-4. Visualization: Utilizes libraries like Matplotlib and Seaborn for graph generation.
-5. Unit Testing: Ensures the reliability and correctness of functionalities.
-
 
 ## Table of Contents
 
 1. [Demo](#demo)
+2. [Project Structure](#project-structure)
 2. [Technology Used](#technology-used)
-3. [Description](#description)
 4. [Getting Started](#getting-started)
     1. [Prerequisites](#prerequisites)
     2. [Using CMD (Command Line)](#using-cmd-command-line)
@@ -38,8 +29,18 @@ The project is divided into the following components:
 Watch Video Here
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8i9jTCctU3U/0.jpg)](https://www.youtube.com/watch?v=8i9jTCctU3U)
-## Technology Used
 
+
+## Project Structure
+The project is divided into the following components:
+
+1. Frontend: Built using Streamlit for an intuitive user interface.
+2. Backend: Developed in Python for data processing and chatbot interactions.
+3. Data Operations: Powered by Pandas AI and Gemini for intelligent analysis.
+4. Visualization: Utilizes libraries like Matplotlib and Seaborn for graph generation.
+5. Unit Testing: Ensures the reliability and correctness of functionalities.
+
+## Technology Used
 **Programming & Scripting Languages:**
 - **Python**: For backend processing, model training, and feature extraction.
 
@@ -188,10 +189,13 @@ Now you should be able to access the frontend on [http://localhost:3000](http://
 - **Milan Kumar**: [MilanK24](https://github.com/MilanK24)
 
 ## Benefits
-- Accurate deepfake detection using state-of-the-art models.
-- Secure and decentralized storage using IPFS.
-- Immutable verification through blockchain technology.
-- Provides transparent and verifiable metadata for each audio file.
+- Privacy-Focused: The Gemini protocol emphasizes user privacy by minimizing tracking and analytics, ensuring a cleaner, more secure browsing experience.
+
+- Simplicity and Minimalism: Designed for efficiency, Gemini uses a simplified text-based format, which reduces complexity and eliminates unnecessary features like JavaScript, making it lightweight and faster.
+
+- Low Resource Requirements: Gemini's streamlined approach is ideal for devices with limited resources or low bandwidth, making it accessible for older systems and low-powered hardware.
+
+- Content-Centric: Prioritizes the presentation of information rather than flashy design elements, fostering distraction-free reading and improving accessibility..
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/GVAmaresh/Dataset_Insights/blob/main/LICENSE) file for details.
