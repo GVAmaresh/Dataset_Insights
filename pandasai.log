@@ -3843,3 +3843,1660 @@ result = {'type': 'dataframe', 'value': dfs[0].head()}
 3  Apples, frozen concentrate   Juice       0.6086        per pint   1.00             8.0000      fluid ounces              0.3043
 4                    Apricots   Fresh       3.6162       per pound   0.93             0.3638            pounds              1.4145}
 2025-02-09 16:43:01 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:00:34 [INFO] Question: Summerize this dataset
+2025-02-09 22:00:34 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:00:34 [INFO] Prompt ID: b0574cb9-de10-4d85-9d8a-6905e72d741f
+2025-02-09 22:00:34 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:00:34 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:00:34 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:00:34 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:00:36 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+Pineapple,Fresh,2.092,per pound,0.51,0.4409,fluid ounces,1.4191
+"Apples, applesauce",Dried,0.5971,per pint,0.76,0.1253,pounds,1.0823
+"Apples, ready-to-drink",Canned,2.2503,per pound,0.52,0.3417,pounds,1.6394
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Summerize this dataset
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-02-09 22:00:36 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:00:39 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:00:39 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'],
+        'Form': ['Fresh', 'Dried', 'Canned'],
+        'RetailPrice': [2.092, 0.5971, 2.2503],
+        'RetailPriceUnit': ['per pound', 'per pint', 'per pound'],
+        'Yield': [0.51, 0.76, 0.52],
+        'CupEquivalentSize': [0.4409, 0.1253, 0.3417],
+        'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'],
+        'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+
+df = pd.DataFrame(data)
+
+# Summarize the dataset
+summary = df.describe()
+
+# Declare result var
+result = {"type": "dataframe", "value": summary}
+            ```
+            
+2025-02-09 22:00:39 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:00:39 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:00:39 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:00:39 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:00:39 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:00:39 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:00:39 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:02:19 [INFO] Question: Summerize this dataset
+2025-02-09 22:02:19 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:02:19 [INFO] Prompt ID: 6177edc8-d371-43d5-886a-79c20e5d061c
+2025-02-09 22:02:19 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:02:19 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:02:19 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:02:19 [INFO] Using cached response
+2025-02-09 22:02:19 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:02:20 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:02:20 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:02:20 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:02:20 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:02:20 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:02:20 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:02:20 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:02:20 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:02:20 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:02:20 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:02:20 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:04:15 [INFO] Question: Summerize this dataset
+2025-02-09 22:04:15 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:04:15 [INFO] Prompt ID: 4cf29d61-2e8d-4b6d-8bb0-e97555fa829c
+2025-02-09 22:04:15 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:04:15 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:04:15 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:04:15 [INFO] Using cached response
+2025-02-09 22:04:15 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:04:15 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:04:15 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:04:15 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:04:15 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:04:15 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:04:15 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:04:15 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:04:15 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:04:15 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:04:15 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:04:15 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:04:52 [INFO] Question: Summerize this dataset
+2025-02-09 22:04:52 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:04:52 [INFO] Prompt ID: a1676373-c1df-49d7-b29c-e950bcf531f4
+2025-02-09 22:04:52 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:04:52 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:04:52 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:04:52 [INFO] Using cached response
+2025-02-09 22:04:52 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:04:52 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:04:52 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:04:52 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:04:52 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:04:52 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:04:52 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:04:52 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:04:52 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:04:52 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:04:52 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:04:52 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:05:25 [INFO] Question: Summerize this dataset
+2025-02-09 22:05:25 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:05:25 [INFO] Prompt ID: 4d0eb90f-4f10-4419-a4cd-5e94bdec8d2f
+2025-02-09 22:05:25 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:05:25 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:05:25 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:05:25 [INFO] Using cached response
+2025-02-09 22:05:25 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:05:25 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:05:25 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:05:25 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:05:25 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:05:25 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:05:25 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:05:25 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:05:25 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:05:25 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:05:25 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:05:25 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:05:56 [INFO] Question: Summerize this dataset
+2025-02-09 22:05:56 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:05:56 [INFO] Prompt ID: acce66a9-dc20-465d-8638-b431c4697927
+2025-02-09 22:05:56 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:05:56 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:05:56 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:05:56 [INFO] Using cached response
+2025-02-09 22:05:56 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:05:56 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:05:56 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:05:56 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:05:56 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:05:56 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:05:56 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:05:56 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:05:56 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:05:56 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:05:56 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:05:56 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:06:33 [INFO] Question: Summerize this dataset
+2025-02-09 22:06:33 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:06:33 [INFO] Prompt ID: f23a361a-ac1b-4433-9dc8-a87a272cc119
+2025-02-09 22:06:33 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:06:33 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:06:33 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:06:33 [INFO] Using cached response
+2025-02-09 22:06:33 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:06:33 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:06:33 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:06:33 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:06:33 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:06:33 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:06:33 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:06:33 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:06:33 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:06:33 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:06:33 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:06:33 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:07:08 [INFO] Question: Summerize this dataset
+2025-02-09 22:07:08 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:07:08 [INFO] Prompt ID: c49d75bd-30c1-4c44-9721-6ff96c0aa64b
+2025-02-09 22:07:08 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:07:08 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:07:08 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:07:08 [INFO] Using cached response
+2025-02-09 22:07:08 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:07:08 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:07:08 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:07:08 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:07:08 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:07:08 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:07:08 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:07:08 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:07:08 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:07:08 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:07:08 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:07:08 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:07:24 [INFO] Question: Summerize this dataset
+2025-02-09 22:07:24 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:07:24 [INFO] Prompt ID: 6fcda4f9-b26d-42dd-98c5-0cd47e313ea8
+2025-02-09 22:07:24 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:07:24 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:07:24 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:07:24 [INFO] Using cached response
+2025-02-09 22:07:24 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:07:24 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:07:24 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:07:24 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:07:24 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:07:24 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:07:24 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:07:24 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:07:24 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:07:24 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:07:24 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:07:24 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:08:14 [INFO] Question: Summerize this dataset
+2025-02-09 22:08:14 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:08:14 [INFO] Prompt ID: a7666eea-b801-4912-a793-187908a01ff7
+2025-02-09 22:08:14 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:08:14 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:08:14 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:08:14 [INFO] Using cached response
+2025-02-09 22:08:14 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:08:14 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:08:14 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:08:14 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:08:14 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:08:14 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:08:14 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:08:14 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Apples, applesauce', 'Apples, ready-to-drink'], 'Form': ['Fresh', 'Dried', 'Canned'], 'RetailPrice': [2.092, 0.5971, 2.2503], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.51, 0.76, 0.52], 'CupEquivalentSize': [0.4409, 0.1253, 0.3417], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [1.4191, 1.0823, 1.6394]}
+df = dfs[0]
+summary = df.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:08:14 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:08:14 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:08:14 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:08:14 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:16:45 [INFO] Question: Summerise this dataset
+2025-02-09 22:16:45 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:16:45 [INFO] Prompt ID: 5ec68bdb-fcb3-4546-88d9-5a6d9dbcb220
+2025-02-09 22:16:45 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:16:45 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:16:45 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:16:45 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:16:46 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+Pineapple,Juice,3.2788,per pound,0.76,0.1433,fluid ounces,0.7755
+"Cherries, packed in syrup or water",Fresh,2.092,per pint,0.92,0.5401,pounds,1.0978
+"Fruit cocktail, packed in syrup or water",Canned,1.0572,per pound,0.65,0.1543,pounds,1.4191
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Summerise this dataset
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-02-09 22:16:46 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:16:50 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:16:50 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+data = {
+    'Fruit': ['Pineapple', 'Cherries, packed in syrup or water', 'Fruit cocktail, packed in syrup or water'],
+    'Form': ['Juice', 'Fresh', 'Canned'],
+    'RetailPrice': [3.2788, 2.092, 1.0572],
+    'RetailPriceUnit': ['per pound', 'per pint', 'per pound'],
+    'Yield': [0.76, 0.92, 0.65],
+    'CupEquivalentSize': [0.1433, 0.5401, 0.1543],
+    'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'],
+    'CupEquivalentPrice': [0.7755, 1.0978, 1.4191]
+}
+
+dfs = pd.DataFrame(data)
+
+# Summarize the dataset
+summary = dfs.describe()
+
+# Declare result var
+result = {"type": "dataframe", "value": summary}
+            ```
+            
+2025-02-09 22:16:50 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:16:50 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:16:50 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Cherries, packed in syrup or water', 'Fruit cocktail, packed in syrup or water'], 'Form': ['Juice', 'Fresh', 'Canned'], 'RetailPrice': [3.2788, 2.092, 1.0572], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.76, 0.92, 0.65], 'CupEquivalentSize': [0.1433, 0.5401, 0.1543], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [0.7755, 1.0978, 1.4191]}
+summary = dfs.describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:16:50 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:16:50 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+AttributeError: 'list' object has no attribute 'describe'
+
+2025-02-09 22:16:50 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2025-02-09 22:16:50 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:16:50 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:16:50 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+Pineapple,Juice,3.2788,per pound,0.76,0.1433,fluid ounces,0.7755
+"Cherries, packed in syrup or water",Fresh,2.092,per pint,0.92,0.5401,pounds,1.0978
+"Fruit cocktail, packed in syrup or water",Canned,1.0572,per pound,0.65,0.1543,pounds,1.4191
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Summerise this dataset
+
+You generated this python code:
+data = {'Fruit': ['Pineapple', 'Cherries, packed in syrup or water', 'Fruit cocktail, packed in syrup or water'], 'Form': ['Juice', 'Fresh', 'Canned'], 'RetailPrice': [3.2788, 2.092, 1.0572], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.76, 0.92, 0.65], 'CupEquivalentSize': [0.1433, 0.5401, 0.1543], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [0.7755, 1.0978, 1.4191]}
+summary = dfs.describe()
+result = {'type': 'dataframe', 'value': summary}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+AttributeError: 'list' object has no attribute 'describe'
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:16:50 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:16:53 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:16:53 [INFO] Code generated:
+            ```
+            data = {'Fruit': ['Pineapple', 'Cherries, packed in syrup or water', 'Fruit cocktail, packed in syrup or water'], 'Form': ['Juice', 'Fresh', 'Canned'], 'RetailPrice': [3.2788, 2.092, 1.0572], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.76, 0.92, 0.65], 'CupEquivalentSize': [0.1433, 0.5401, 0.1543], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [0.7755, 1.0978, 1.4191]}
+summary = pd.DataFrame(data).describe()
+result = {'type': 'dataframe', 'value': summary}
+            ```
+            
+2025-02-09 22:16:53 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:16:53 [INFO] 
+Code running:
+```
+data = {'Fruit': ['Pineapple', 'Cherries, packed in syrup or water', 'Fruit cocktail, packed in syrup or water'], 'Form': ['Juice', 'Fresh', 'Canned'], 'RetailPrice': [3.2788, 2.092, 1.0572], 'RetailPriceUnit': ['per pound', 'per pint', 'per pound'], 'Yield': [0.76, 0.92, 0.65], 'CupEquivalentSize': [0.1433, 0.5401, 0.1543], 'CupEquivalentUnit': ['fluid ounces', 'pounds', 'pounds'], 'CupEquivalentPrice': [0.7755, 1.0978, 1.4191]}
+summary = pd.DataFrame(data).describe()
+result = {'type': 'dataframe', 'value': summary}
+        ```
+2025-02-09 22:16:53 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:16:53 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice     Yield  CupEquivalentSize  CupEquivalentPrice
+count     3.000000  3.000000           3.000000            3.000000
+mean      2.142667  0.776667           0.279233            1.097467
+std       1.111666  0.135769           0.225984            0.321800
+min       1.057200  0.650000           0.143300            0.775500
+25%       1.574600  0.705000           0.148800            0.936650
+50%       2.092000  0.760000           0.154300            1.097800
+75%       2.685400  0.840000           0.347200            1.258450
+max       3.278800  0.920000           0.540100            1.419100}
+2025-02-09 22:16:53 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:27:09 [INFO] Question: Summerise the dataset
+2025-02-09 22:27:09 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:27:09 [INFO] Prompt ID: e0c33bc6-a692-481f-8570-09dc4d06b4cd
+2025-02-09 22:27:09 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:27:09 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:27:09 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:27:09 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:27:11 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+Blackberries,Dried,1.8541,per pound,0.95,0.5401,pounds,0.7466
+Pineapple,Juice,0.5971,per pint,0.96,0.1433,fluid ounces,0.9507
+Grapefruit,Canned,10.3035,per pound,0.52,0.3638,fluid ounces,0.5255
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Summerise the dataset
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-02-09 22:27:11 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:27:13 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:27:13 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+dfs = [pd.DataFrame({'Fruit': ['Blackberries', 'Pineapple', 'Grapefruit'],
+                     'Form': ['Dried', 'Juice', 'Canned'],
+                     'RetailPrice': [1.8541, 0.5971, 10.3035],
+                     'RetailPriceUnit': ['per pound', 'per pint', 'per pound'],
+                     'Yield': [0.95, 0.96, 0.52],
+                     'CupEquivalentSize': [0.5401, 0.1433, 0.3638],
+                     'CupEquivalentUnit': ['pounds', 'fluid ounces', 'fluid ounces'],
+                     'CupEquivalentPrice': [0.7466, 0.9507, 0.5255]})]
+
+# Declare result var
+result = {
+    "type": "dataframe",
+    "value": dfs[0].describe()
+}
+            ```
+            
+2025-02-09 22:27:13 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:27:13 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:27:13 [INFO] 
+Code running:
+```
+result = {'type': 'dataframe', 'value': dfs[0].describe()}
+        ```
+2025-02-09 22:27:13 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:27:14 [INFO] Executing Step 7: ResultValidation
+2025-02-09 22:27:14 [INFO] Answer: {'type': 'dataframe', 'value':        RetailPrice      Yield  CupEquivalentSize  CupEquivalentPrice
+count    62.000000  62.000000          62.000000           62.000000
+mean      2.994571   0.876129           1.704984            1.065056
+std       2.269393   0.174979           2.949262            0.578325
+min       0.382000   0.460000           0.123200            0.242900
+25%       1.364225   0.722500           0.322450            0.639300
+50%       2.159250   0.980000           0.363800            1.008250
+75%       4.116525   1.000000           0.540100            1.353475
+max      10.303500   1.000000           8.000000            3.555800}
+2025-02-09 22:27:14 [INFO] Executing Step 8: ResultParsing
+2025-02-09 22:33:31 [INFO] Question: what is the distribution of retail price 
+2025-02-09 22:33:31 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:33:31 [INFO] Prompt ID: c92820fd-d4db-4c7b-a4a4-521727eb132d
+2025-02-09 22:33:31 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:33:31 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:33:31 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:33:31 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:33:32 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Pineapple, packed in syrup or water",Frozen,2.0996,per pint,0.93,0.3858,fluid ounces,1.5169
+Mangoes,Canned,7.6611,per pound,0.91,0.1232,pounds,1.1924
+"Fruit cocktail, packed in juice",Juice,1.1589,per pint,0.9,0.1653,pounds,1.1861
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ what is the distribution of retail price 
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-02-09 22:33:32 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:33:35 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:33:35 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Extract RetailPrice column values from all dataframes in dfs
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+
+# Plotting the distribution of retail prices
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('retail_price_distribution.png')
+
+# Declare result variable as a plot
+result = {"type": "plot", "value": "retail_price_distribution.png"}
+            ```
+            
+2025-02-09 22:33:35 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:33:35 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:33:35 [INFO] Saving charts to D:\Projects\Dataset_Insights\exports\charts\temp_chart.png
+2025-02-09 22:33:35 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('D:/Projects/Dataset_Insights/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'D:/Projects/Dataset_Insights/exports/charts/temp_chart.png'}
+        ```
+2025-02-09 22:33:35 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:33:35 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:33:35 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2025-02-09 22:33:35 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:33:35 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:33:35 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Pineapple, packed in syrup or water",Frozen,2.0996,per pint,0.93,0.3858,fluid ounces,1.5169
+Mangoes,Canned,7.6611,per pound,0.91,0.1232,pounds,1.1924
+"Fruit cocktail, packed in juice",Juice,1.1589,per pint,0.9,0.1653,pounds,1.1861
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('D:/Projects/Dataset_Insights/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'D:/Projects/Dataset_Insights/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:33:35 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:33:37 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:33:37 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+    
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Retail Price Distribution')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:33:37 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:33:37 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Retail Price Distribution')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:33:37 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Retail Price Distribution' is not allowed
+
+2025-02-09 22:33:37 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2025-02-09 22:33:37 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:33:37 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:33:37 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Pineapple, packed in syrup or water",Frozen,2.0996,per pint,0.93,0.3858,fluid ounces,1.5169
+Mangoes,Canned,7.6611,per pound,0.91,0.1232,pounds,1.1924
+"Fruit cocktail, packed in juice",Juice,1.1589,per pint,0.9,0.1653,pounds,1.1861
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Retail Price Distribution')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Retail Price Distribution' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:33:37 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:33:39 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:33:39 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+# Extract and combine retail prices from all dataframes
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:33:39 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:33:39 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:33:39 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:33:39 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2025-02-09 22:33:39 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:33:39 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:33:39 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Pineapple, packed in syrup or water",Frozen,2.0996,per pint,0.93,0.3858,fluid ounces,1.5169
+Mangoes,Canned,7.6611,per pound,0.91,0.1232,pounds,1.1924
+"Fruit cocktail, packed in juice",Juice,1.1589,per pint,0.9,0.1653,pounds,1.1861
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:33:39 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:33:41 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:33:41 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:33:41 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:33:41 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:33:41 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:33:41 [ERROR] Pipeline failed on step 6: Potential security risk: 'Distribution of Retail Prices' is not allowed
+2025-02-09 22:45:30 [INFO] Question: what is the distribution of retail price 
+2025-02-09 22:45:30 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:45:30 [INFO] Prompt ID: f15971cc-9410-4693-8dcc-cc8e061b7337
+2025-02-09 22:45:30 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:45:30 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:45:30 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:45:30 [INFO] Using cached response
+2025-02-09 22:45:30 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:45:30 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:45:30 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:45:30 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:45:30 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:45:30 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:45:30 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:45:30 [INFO] Saving charts to D:\Projects\Dataset_Insights\exports\charts\temp_chart.png
+2025-02-09 22:45:30 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('D:/Projects/Dataset_Insights/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'D:/Projects/Dataset_Insights/exports/charts/temp_chart.png'}
+        ```
+2025-02-09 22:45:30 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:45:30 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:45:30 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2025-02-09 22:45:30 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:45:30 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:45:30 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Pineapple, packed in syrup or water",Fresh,7.7338,per pint,0.9,0.3197,fluid ounces,1.2931
+"Oranges, frozen concentrate",Frozen,1.2243,per pound,0.94,8.0,pounds,0.7531
+Papaya,Dried,2.0363,per pound,0.52,0.3307,fluid ounces,0.3669
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('D:/Projects/Dataset_Insights/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'D:/Projects/Dataset_Insights/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:45:30 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:45:33 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:45:33 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:45:33 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:45:33 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:45:33 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:45:33 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2025-02-09 22:45:33 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:45:33 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:45:33 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Pineapple, packed in syrup or water",Fresh,7.7338,per pint,0.9,0.3197,fluid ounces,1.2931
+"Oranges, frozen concentrate",Frozen,1.2243,per pound,0.94,8.0,pounds,0.7531
+Papaya,Dried,2.0363,per pound,0.52,0.3307,fluid ounces,0.3669
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:45:33 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:45:35 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:45:35 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+# Extract retail prices from the dataframes
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+
+# Plot the distribution of retail prices
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Retail Price Distribution')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:45:35 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:45:35 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Retail Price Distribution')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:45:35 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Retail Price Distribution' is not allowed
+
+2025-02-09 22:45:35 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2025-02-09 22:45:35 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:45:35 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:45:35 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Pineapple, packed in syrup or water",Fresh,7.7338,per pint,0.9,0.3197,fluid ounces,1.2931
+"Oranges, frozen concentrate",Frozen,1.2243,per pound,0.94,8.0,pounds,0.7531
+Papaya,Dried,2.0363,per pound,0.52,0.3307,fluid ounces,0.3669
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Retail Price Distribution')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Retail Price Distribution' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:45:35 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:45:37 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:45:37 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+# Extract retail prices from the dataframes
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+
+# Plot the distribution of retail prices
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:45:37 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:45:37 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:45:37 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:45:37 [ERROR] Pipeline failed on step 6: Potential security risk: 'Distribution of Retail Prices' is not allowed
+2025-02-09 22:46:37 [INFO] Question: what is the distribution of retail price 
+2025-02-09 22:46:37 [INFO] Running PandasAI with bamboo_llm LLM...
+2025-02-09 22:46:37 [INFO] Prompt ID: 4257b30b-43c7-454d-a151-3e9eeb46764b
+2025-02-09 22:46:37 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-02-09 22:46:37 [INFO] Executing Step 0: ValidatePipelineInput
+2025-02-09 22:46:37 [INFO] Executing Step 1: CacheLookup
+2025-02-09 22:46:37 [INFO] Using cached response
+2025-02-09 22:46:37 [INFO] Executing Step 2: PromptGeneration
+2025-02-09 22:46:37 [INFO] Executing Step 2: Skipping...
+2025-02-09 22:46:37 [INFO] Executing Step 3: CodeGenerator
+2025-02-09 22:46:37 [INFO] Executing Step 3: Skipping...
+2025-02-09 22:46:37 [INFO] Executing Step 4: CachePopulation
+2025-02-09 22:46:37 [INFO] Executing Step 4: Skipping...
+2025-02-09 22:46:37 [INFO] Executing Step 5: CodeCleaning
+2025-02-09 22:46:37 [INFO] Saving charts to D:\Projects\Dataset_Insights\exports\charts\temp_chart.png
+2025-02-09 22:46:37 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('D:/Projects/Dataset_Insights/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'D:/Projects/Dataset_Insights/exports/charts/temp_chart.png'}
+        ```
+2025-02-09 22:46:37 [INFO] Executing Step 6: CodeExecution
+2025-02-09 22:46:37 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:46:37 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2025-02-09 22:46:37 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:46:37 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:46:37 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Apples, frozen concentrate",Fresh,1.6988,per pound,0.9,0.1253,pounds,1.2636
+"Apples, applesauce",Frozen,2.092,per pint,0.95,0.3197,fluid ounces,0.4349
+"Cherries, packed in syrup or water",Juice,7.4854,per pint,0.62,8.0,fluid ounces,1.4112
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('D:/Projects/Dataset_Insights/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'D:/Projects/Dataset_Insights/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:46:37 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:46:39 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:46:39 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:46:39 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:46:39 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:46:39 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:46:39 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2025-02-09 22:46:39 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:46:39 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:46:39 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Apples, frozen concentrate",Fresh,1.6988,per pound,0.9,0.1253,pounds,1.2636
+"Apples, applesauce",Frozen,2.092,per pint,0.95,0.3197,fluid ounces,0.4349
+"Cherries, packed in syrup or water",Juice,7.4854,per pint,0.62,8.0,fluid ounces,1.4112
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:46:39 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:46:41 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:46:41 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+# Extract retail prices from the dataframes
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+
+# Plot the distribution of retail prices
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:46:41 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:46:41 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:46:41 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:46:41 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2025-02-09 22:46:41 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2025-02-09 22:46:41 [INFO] Executing Step 0: ErrorPromptGeneration
+2025-02-09 22:46:41 [INFO] Using prompt: <dataframe>
+dfs[0]:62x8
+Fruit,Form,RetailPrice,RetailPriceUnit,Yield,CupEquivalentSize,CupEquivalentUnit,CupEquivalentPrice
+"Apples, frozen concentrate",Fresh,1.6988,per pound,0.9,0.1253,pounds,1.2636
+"Apples, applesauce",Frozen,2.092,per pint,0.95,0.3197,fluid ounces,0.4349
+"Cherries, packed in syrup or water",Juice,7.4854,per pint,0.62,8.0,fluid ounces,1.4112
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ what is the distribution of retail price 
+
+You generated this python code:
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+
+Fix the python code above and return the new python code:
+2025-02-09 22:46:41 [INFO] Executing Step 1: CodeGenerator
+2025-02-09 22:46:43 [INFO] Prompt used:
+            None
+            
+2025-02-09 22:46:43 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+# Extract retail prices from the dataframes
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+
+# Plot the distribution of retail prices
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+            ```
+            
+2025-02-09 22:46:43 [INFO] Executing Step 2: CodeCleaning
+2025-02-09 22:46:43 [INFO] 
+Code running:
+```
+retail_prices = []
+for df in dfs:
+    retail_prices.extend(df['RetailPrice'])
+plt.figure(figsize=(10, 6))
+plt.hist(retail_prices, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Retail Price')
+plt.ylabel('Frequency')
+plt.title('Distribution of Retail Prices')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+        ```
+2025-02-09 22:46:43 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 8, in <module>
+  File "C:\Users\resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandasai\safe_libs\base_restricted_module.py", line 10, in wrapper
+    raise SecurityError(
+pandasai.safe_libs.base_restricted_module.SecurityError: Potential security risk: 'Distribution of Retail Prices' is not allowed
+
+2025-02-09 22:46:43 [ERROR] Pipeline failed on step 6: Potential security risk: 'Distribution of Retail Prices' is not allowed

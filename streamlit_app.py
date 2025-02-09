@@ -12,6 +12,7 @@ from PIL import Image
 import seaborn as sns
 from pandasai import Agent
 from pandasai.helpers.cache import Cache
+from pandasai.connectors.pandas import PandasConnector
 
 import os
 os.environ["MPLCONFIGDIR"] = "/app/matplotlib"
@@ -195,6 +196,7 @@ if st.session_state.page == 'chat':
     df = st.session_state.df
     # custom_cache = Cache(filepath="/app/cache/cache_db_0.11.db")
 
+    # df_connector = PandasConnector(df)
     updated_df = SmartDataframe(df, config={"llm": llm})
 
 
@@ -229,23 +231,9 @@ if st.session_state.page == 'chat':
                 st.error("Please enter a prompt before submitting!")
             else:
                 try:
-                    # response = updated_df.chat(chat_prompt)
                     response2 = agent.chat(chat_prompt)
-
                     st.markdown("### Response:")
-                    # if "exports" in response:
-                    #     img = Image.open(response)
 
-                    #     fig, ax = plt.subplots()
-                    #     ax.imshow(img)
-                    #     ax.axis('off')
-
-                    #     st.pyplot(fig)
-
-                    # elif isinstance(response, str):
-                    #     st.text_area("Response:", value=response, height=200, key="response")
-                    # else:
-                    #     st.warning("Unexpected response format. Please refine your query!")  
                     if "exports" in response2:
                         img = Image.open(response2)
 
@@ -255,7 +243,25 @@ if st.session_state.page == 'chat':
 
                         st.pyplot(fig)
                     else:
-                        st.text_area("Second Response: ", value=response2, height=200, key="response2")
+                        if "Potential security risk" in response2:
+                            st.warning("⚠️ **The entered prompt is not relevant to the dataset.**")
+
+                            st.markdown("""
+                                The provided input does not match the dataset structure.  
+                                Please refine your query by ensuring the following:
+                            """)
+
+                            st.info("💡 **How to improve your prompt:**")
+                            st.markdown("""
+                            - **Use correct column names**: Ensure you reference actual columns from the dataset.
+                            - **Be specific**: Provide a clear and structured question.
+                            - **Stay relevant**: Avoid unrelated queries that do not match the dataset's context.
+                            - **Check for typos**: Misspelled words may lead to an invalid query.
+                            """)
+                        else:
+                            st.text_area(value=response2, height=200, key="response2")
+                except Exception as ValueError:
+                    st.warning("The value doesn't match it")
                 except Exception as e:
                     st.error(f"An error occurred while processing your prompt: {e}")
                     st.text_area("Second Response: ", value=response2, height=200, key="response2")
