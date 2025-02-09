@@ -12,3 +12,5 @@ pytest
 duckdb
 pytest-mock
 huggingface_hub --upgrade
+pymongo 
+bcrypt
