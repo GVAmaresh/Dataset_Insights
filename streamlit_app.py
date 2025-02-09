@@ -229,23 +229,23 @@ if st.session_state.page == 'chat':
                 st.error("Please enter a prompt before submitting!")
             else:
                 try:
-                    response = updated_df.chat(chat_prompt)
+                    # response = updated_df.chat(chat_prompt)
                     response2 = agent.chat(chat_prompt)
 
                     st.markdown("### Response:")
-                    if "exports" in response:
-                        img = Image.open(response)
+                    # if "exports" in response:
+                    #     img = Image.open(response)
 
-                        fig, ax = plt.subplots()
-                        ax.imshow(img)
-                        ax.axis('off')
+                    #     fig, ax = plt.subplots()
+                    #     ax.imshow(img)
+                    #     ax.axis('off')
 
-                        st.pyplot(fig)
+                    #     st.pyplot(fig)
 
-                    elif isinstance(response, str):
-                        st.text_area("Response:", value=response, height=200, key="response")
-                    else:
-                        st.warning("Unexpected response format. Please refine your query!")  
+                    # elif isinstance(response, str):
+                    #     st.text_area("Response:", value=response, height=200, key="response")
+                    # else:
+                    #     st.warning("Unexpected response format. Please refine your query!")  
                     if "exports" in response2:
                         img = Image.open(response2)
 
